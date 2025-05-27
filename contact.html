@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Melek9</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <video autoplay loop muted plays-inline class="back-vid">
+    <source src="images/galaxy.mp4" type="video/mp4">
+  </video>
+  <section class="main-section">
+    <nav>
+        <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">EZ</span>MeLeK</h1>
+        <div class="menu-btn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="projects.html">Projects</a></li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="skills.html">Skills</a></li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a class="active" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact-container">
+      <h1 class="section-title" data-aos="fade-down" data-aos-duration="1000">Contact Me</h1>
+      
+      <div class="contact-content">
+        <div class="contact-info" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+          <div class="contact-card">
+            <i class='bx bx-envelope'></i>
+            <h3>Email</h3>
+            <p>abemeleksolomon12@gmail.com</p>
+          </div>
+          
+          <div class="contact-card">
+            <i class='bx bx-phone'></i>
+            <h3>Phone</h3>
+            <p>+251968045352</p>
+          </div>
+          
+          <div class="contact-card">
+            <i class='bx bx-map'></i>
+            <h3>Ethiopia, Addis Ababa</h3>
+            <p>Saris, Hana Mariyam</p>
+          </div>
+          
+          <div class="social-links">
+            <a href="#" data-aos="fade-up" data-aos-delay="300"><i class='bx bxl-github'></i></a>
+            <a href="#" data-aos="fade-up" data-aos-delay="400"><i class='bx bxl-twitter'></i></a>
+            <a href="#" data-aos="fade-up" data-aos-delay="500"><i class='bx bxl-linkedin'></i></a>
+            <a href="#" data-aos="fade-up" data-aos-delay="600"><i class='bx bxl-instagram'></i></a>
+          </div>
+        </div>
+
+        <form class="contact-form" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="input-group">
+            <input type="text" required>
+            <label>Your Name</label>
+          </div>
+          
+          <div class="input-group">
+            <input type="email" required>
+            <label>Your Email</label>
+          </div>
+          
+          <div class="input-group">
+            <input type="text" required>
+            <label>Subject</label>
+          </div>
+          
+          <div class="input-group">
+            <textarea required></textarea>
+            <label>Your Message</label>
+          </div>
+          
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+      AOS.init();
+      
+      const menuBtn = document.querySelector('.menu-btn');
+      const navMenu = document.querySelector('nav ul');
+      const contentSection = document.querySelector('.contact-container');
+      
+      menuBtn.addEventListener('click', () => {
+          menuBtn.classList.toggle('active');
+          navMenu.classList.toggle('active');
+          
+          if (contentSection) {
+              contentSection.style.display = navMenu.classList.contains('active') ? 'none' : '';
+          }
+      });
+  
+      document.querySelectorAll('nav a').forEach(link => {
+          link.addEventListener('click', () => {
+              menuBtn.classList.remove('active');
+              navMenu.classList.remove('active');
+              if (contentSection) {
+                  contentSection.style.display = '';
+              }
+          });
+      });
+  </script>
+</body>
+</html>

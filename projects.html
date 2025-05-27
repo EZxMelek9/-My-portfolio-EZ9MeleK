@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Melek9</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <video autoplay loop muted plays-inline class="back-vid">
+    <source src="images/galaxy.mp4" type="video/mp4">
+  </video>
+  <section class="main-section">
+    <nav>
+        <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">EZ</span>MeLeK</h1>
+        <div class="menu-btn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a class="active" href="projects.html">Projects</a></li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="skills.html">Skills</a></li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="projects-container">
+      <h1 class="section-title" data-aos="fade-down" data-aos-duration="1000">My Projects</h1>
+      
+      <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <img src="images/project1.png" alt="Project 1">
+          <h3>Shoes Store</h3>
+          <p>I made this for a shoe store.</p>
+          <div class="project-links">
+            <a href="#" class="project-btn"><i class='bx bxl-github'></i> View Code</a>
+            <a href="#" class="project-btn"><i class='bx bx-link-external'></i> Live Demo</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+          <img src="images/project2.png" alt="Project 2">
+          <h3> classical Harpist</h3>
+          <p>I made this to give my father his harp/Begena skills and to teach those who want to learn.</p>
+          <div class="project-links">
+            <a href="#" class="project-btn"><i class='bx bxl-github'></i> View Code</a>
+            <a href="#" class="project-btn"><i class='bx bx-link-external'></i> Live Demo</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+          <img src="images/project3.png" alt="Project 3">
+          <h3>My First portfolio project</h3>
+          <p>my first portfolio web</p>
+          <div class="project-links">
+            <a href="#" class="project-btn"><i class='bx bxl-github'></i> View Code</a>
+            <a href="#" class="project-btn"><i class='bx bx-link-external'></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    
+    const menuBtn = document.querySelector('.menu-btn');
+    const navMenu = document.querySelector('nav ul');
+    const contentSection = document.querySelector('.projects-container');
+    
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      
+      if (contentSection) {
+        contentSection.style.display = navMenu.classList.contains('active') ? 'none' : 'block';
+      }
+    });
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        if (contentSection) {
+          contentSection.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

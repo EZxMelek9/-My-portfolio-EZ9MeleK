@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melek9</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <video autoplay loop muted plays-inline class="back-vid">
+    <source src="images/galaxy.mp4" type="video/mp4">
+  </video>
+  <section class="main-section">
+    <nav>
+      <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">EZ9</span>MeLeK</h1>
+      <div class="menu-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul>
+        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a class="active" href="#">Home</a></li>
+        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="projects.html">Projects</a></li>
+        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="skills.html">Skills</a></li>
+        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="hero">
+      <div class="hero-info">
+        <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">Hi, I'm </h1>
+        <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">Abemelek From Ethiopia</h2>
+        <h3 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900">I'm a  Developer</h3>
+        <p data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1000">Hello! I am AbemeleK Solomon, I am grade 12 student a passionate web developer with a passion for creating innovative and visually stunning websites. With over 3 years of experience working to Friends, I have learned modern web design, development, and user experience.
+          My expertise spans front-end Development using tools such as HTML, CSS, JavaScript, React, and Node.js. I am driven by a passion for creative problem solving and a desire to collaborate with clients to bring their ideas to life.
+          Outside of coding, you can find me exploring new technologies, gaming, being outdoors, or drawing!</p>
+        <div class="Buttons">
+          <a href="contact.html" class="btn" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="1100">Hire me</a> 
+          <ul class="ul-icons">
+            <li><a href="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200"><i class='bx bxl-github'></i></a></li>
+            <li><a href="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1300"><i class='bx bxl-twitter'></i></a></li>
+            <li><a href="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400" ><i class='bx bxl-youtube'></i></a></li>
+            <li><a href="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500"><i class='bx bxl-facebook-circle'></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hero-img" data-aos="zoom-in-left" data-aos-duration="2500">
+        <img src="images/man1.png" alt="person-img" >
+      </div>
+    </div>
+
+    <div class="info-sec">
+      <div class="info-card" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1600">
+        <h1>3+</h1>
+        <p>Years of <br> Experience</p>
+      </div>
+      <div class="info-card" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1700">
+        <h1>7+</h1>
+        <p>Technical <br> Skills</p>
+      </div>
+      <div class="info-card" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1800">
+        <h1>20+</h1>
+        <p>Projects <br> Completed</p>
+      </div>
+      <div class="info-card" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1900">
+        <h1>13+</h1>
+        <p>Satisfied <br> Clients</p>
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    
+    const menuBtn = document.querySelector('.menu-btn');
+    const navMenu = document.querySelector('nav ul');
+    const mainContent = document.querySelector('.hero');
+    const infoSection = document.querySelector('.info-sec');
+    
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      
+      // Hide/Show main content when menu is active
+      if (mainContent) {
+        mainContent.style.display = navMenu.classList.contains('active') ? 'none' : 'flex';
+      }
+      if (infoSection) {
+        infoSection.style.display = navMenu.classList.contains('active') ? 'none' : 'flex';
+      }
+    });
+
+    // Close menu and show content when clicking a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        if (mainContent) {
+          mainContent.style.display = 'flex';
+        }
+        if (infoSection) {
+          infoSection.style.display = 'flex';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
