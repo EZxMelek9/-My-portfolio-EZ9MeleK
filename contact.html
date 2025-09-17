@@ -36,13 +36,13 @@
           <div class="contact-card">
             <i class='bx bx-envelope'></i>
             <h3>Email</h3>
-            <p>abemeleksolomon12@gmail.com</p>
+            <p>solomonabemelek12@gmail.com</p>
           </div>
           
           <div class="contact-card">
-            <i class='bx bx-phone'></i>
-            <h3>Phone</h3>
-            <p>+251968045352</p>
+            <i class='bx bx-message'></i>
+            <h3>Telegram</h3>
+            <p>@Enqopazyon9</p>
           </div>
           
           <div class="contact-card">
@@ -59,28 +59,28 @@
           </div>
         </div>
 
-        <form class="contact-form" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <form class="contact-form" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" id="contactForm">
           <div class="input-group">
-            <input type="text" required>
+            <input type="text" required id="name">
             <label>Your Name</label>
           </div>
           
           <div class="input-group">
-            <input type="email" required>
+            <input type="email" required id="email">
             <label>Your Email</label>
           </div>
           
           <div class="input-group">
-            <input type="text" required>
+            <input type="text" required id="subject">
             <label>Subject</label>
           </div>
           
           <div class="input-group">
-            <textarea required></textarea>
+            <textarea required id="message"></textarea>
             <label>Your Message</label>
           </div>
           
-          <button class="btn" type="submit">Send Message</button>
+           <a href="contact.html" type="button" class="btn" id="sendMessageBtn">Send Message</a>
         </form>
       </div>
     </div>
@@ -111,6 +111,26 @@
                   contentSection.style.display = '';
               }
           });
+      });
+      
+      // Handle the Send Message button click
+      document.getElementById('sendMessageBtn').addEventListener('click', function() {
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const subject = document.getElementById('subject').value;
+          const message = document.getElementById('message').value;
+          
+          if (!name || !email || !subject || !message) {
+              alert('Please fill all fields');
+              return;
+          }
+          
+          // Create email content
+          const emailSubject = encodeURIComponent(`${subject} - Contact Form Message`);
+          const emailBody = encodeURIComponent(`Name: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}`);
+          
+          // Open default email client with pre-filled information
+          window.location.href = `mailto:solomonabemelek12@gmail.com?subject=${emailSubject}&body=${emailBody}`;
       });
   </script>
 </body>
